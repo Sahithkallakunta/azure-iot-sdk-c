@@ -217,6 +217,16 @@ phases:
   queue: Hosted Ubuntu 1604
   displayName: 'ubuntu1604'
   steps:
+  - task: Docker@1
+    displayName: 'Start TPM Simulator'
+    inputs:
+      containerregistrytype: 'Container Registry'
+
+      command: 'Run an image'
+
+      imageName: aziotbld/testtpm
+
+      containerName: 'testtpm-instance'
   - script: |
       export OPENSSL_ia32cap=0x00000000
       sudo chmod -R 755 .
