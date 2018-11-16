@@ -83,7 +83,7 @@ phases:
 - phase: gcc46
   variables:
     _PREVIEW_VSTS_DOCKER_IMAGE: "aziotbld/gcc-4.6:latest"
-  queue: $(ENV)
+  queue: c-df
   displayName: 'gcc-4.6'
   steps:
   - script: |
@@ -103,7 +103,7 @@ phases:
 - phase: linuxoptions
   variables:
     _PREVIEW_VSTS_DOCKER_IMAGE: "aziotbld/vsts-linux-c-ubuntu"
-  queue: $(ENV)
+  queue: c-df
   displayName: 'linux-options'
   steps:
   - script: 'sudo ./jenkins/linux_c_option_test.sh'
@@ -182,7 +182,7 @@ phases:
 - phase: clang
   variables:
     _PREVIEW_VSTS_DOCKER_IMAGE: "aziotbld/ubuntu-clang"
-  queue: $(ENV)
+  queue: c-df
   displayName: 'clang'
   steps:
   - script: |
